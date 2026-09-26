@@ -20,19 +20,34 @@
       "type": "string",
       "enum": [
         "ASSET_REGISTERED",
+        "CONTRIBUTION_DECLARED",
         "RIGHTS_DECLARED",
+        "RIGHTS_CONFIRMED",
+        "REVISION_CREATED",
+        "REVISION_SIGNED",
+        "TRACK_LOCKED",
         "REVISION_FROZEN",
         "RELEASE_POSTED",
-        "TAKEDOWN_OPENED"
+        "SOURCE_WITHDRAWN",
+        "TAKEDOWN_OPENED",
+        "TAKEDOWN_ENFORCED",
+        "REPLACEMENT_TASK_OPENED",
+        "CAMPAIGN_CLOSED",
+        "CORRECTION_PROPAGATED"
       ]
     },
     "aggregate_type": {
       "type": "string",
       "enum": [
         "media_asset",
+        "contribution",
         "rights_grant",
         "edit_revision",
-        "channel_release"
+        "track_lock",
+        "channel_release",
+        "takedown_notice",
+        "replacement_task",
+        "campaign"
       ]
     },
     "aggregate_id": {
@@ -56,13 +71,60 @@
       "content_hash",
       "source_kind"
     ],
+    "CONTRIBUTION_DECLARED": [
+      "creator_id",
+      "role",
+      "asset_ref"
+    ],
     "RIGHTS_DECLARED": [
       "grantor_ref",
       "scope"
     ],
+    "RIGHTS_CONFIRMED": [
+      "grant_ref",
+      "confirmed_by"
+    ],
+    "REVISION_CREATED": [
+      "items"
+    ],
+    "REVISION_SIGNED": [
+      "sign_kind",
+      "signer"
+    ],
+    "TRACK_LOCKED": [
+      "revision_ref",
+      "track_ref"
+    ],
+    "REVISION_FROZEN": [
+      "frozen_items",
+      "channel"
+    ],
     "RELEASE_POSTED": [
       "channel",
       "revision_ref"
+    ],
+    "SOURCE_WITHDRAWN": [
+      "reason"
+    ],
+    "TAKEDOWN_OPENED": [
+      "asset_ref",
+      "reason",
+      "deadline_at"
+    ],
+    "TAKEDOWN_ENFORCED": [
+      "takedown_ref"
+    ],
+    "REPLACEMENT_TASK_OPENED": [
+      "release_ref",
+      "asset_ref",
+      "scope"
+    ],
+    "CAMPAIGN_CLOSED": [
+      "evidence_ref"
+    ],
+    "CORRECTION_PROPAGATED": [
+      "release_ref",
+      "notice"
     ]
   },
   "additionalProperties": false
