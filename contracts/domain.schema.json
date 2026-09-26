@@ -20,10 +20,29 @@
       "type": "string",
       "enum": [
         "ASSET_REGISTERED",
+        "ASSET_REGISTRATION_DEDUPED",
+        "ASSET_QUARANTINED",
+        "QUARANTINE_RESOLVED",
         "RIGHTS_DECLARED",
+        "RIGHTS_VERIFIED",
+        "CONTRIBUTION_RECORDED",
+        "REVISION_CREATED",
+        "REVISION_SIGNOFF",
         "REVISION_FROZEN",
+        "REVISION_BLOCKED",
+        "REVISION_ABANDONED",
+        "TRACKS_RESERVED",
+        "TRACKS_RELEASED",
         "RELEASE_POSTED",
-        "TAKEDOWN_OPENED"
+        "RELEASE_ENDED",
+        "RELEASE_SUSPENDED",
+        "SOURCE_WITHDRAWN",
+        "REPLACEMENT_TASK_OPENED",
+        "REPLACEMENT_TASK_CLOSED",
+        "TAKEDOWN_OPENED",
+        "TAKEDOWN_ENFORCED",
+        "CORRECTION_ISSUED",
+        "CORRECTION_PROPAGATED"
       ]
     },
     "aggregate_type": {
@@ -32,7 +51,9 @@
         "media_asset",
         "rights_grant",
         "edit_revision",
-        "channel_release"
+        "channel_release",
+        "replacement_task",
+        "takedown_notice"
       ]
     },
     "aggregate_id": {
@@ -56,13 +77,97 @@
       "content_hash",
       "source_kind"
     ],
+    "ASSET_REGISTRATION_DEDUPED": [
+      "content_hash",
+      "reused_asset_ref",
+      "decision"
+    ],
+    "ASSET_QUARANTINED": [
+      "content_hash",
+      "prior_asset_ref",
+      "drift_fields"
+    ],
+    "QUARANTINE_RESOLVED": [
+      "resolved_by",
+      "decision"
+    ],
     "RIGHTS_DECLARED": [
       "grantor_ref",
       "scope"
     ],
+    "RIGHTS_VERIFIED": [
+      "verified_by"
+    ],
+    "CONTRIBUTION_RECORDED": [
+      "contributor_ref",
+      "contribution_role",
+      "asset_ref"
+    ],
+    "REVISION_CREATED": [
+      "created_by",
+      "items"
+    ],
+    "REVISION_SIGNOFF": [
+      "signoff_kind",
+      "signed_by"
+    ],
+    "REVISION_BLOCKED": [
+      "asset_ref",
+      "reason"
+    ],
+    "REVISION_ABANDONED": [
+      "abandoned_by"
+    ],
+    "TRACKS_RESERVED": [
+      "revision_ref",
+      "track_refs"
+    ],
+    "TRACKS_RELEASED": [
+      "revision_ref",
+      "track_refs"
+    ],
     "RELEASE_POSTED": [
       "channel",
       "revision_ref"
+    ],
+    "RELEASE_ENDED": [
+      "ended_by"
+    ],
+    "RELEASE_SUSPENDED": [
+      "reason"
+    ],
+    "SOURCE_WITHDRAWN": [
+      "reason",
+      "withdrawn_by"
+    ],
+    "REPLACEMENT_TASK_OPENED": [
+      "release_ref",
+      "asset_ref",
+      "channel",
+      "scope"
+    ],
+    "REPLACEMENT_TASK_CLOSED": [
+      "closed_by",
+      "resolution"
+    ],
+    "TAKEDOWN_OPENED": [
+      "target_kind",
+      "target_ref",
+      "reason",
+      "due_at",
+      "opened_by"
+    ],
+    "TAKEDOWN_ENFORCED": [
+      "action"
+    ],
+    "CORRECTION_ISSUED": [
+      "release_ref",
+      "correction"
+    ],
+    "CORRECTION_PROPAGATED": [
+      "release_ref",
+      "channel",
+      "correction_ref"
     ]
   },
   "additionalProperties": false
