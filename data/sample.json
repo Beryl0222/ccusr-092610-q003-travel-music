@@ -1,0 +1,12 @@
+{
+  "event_id": "092601-003-sample-001",
+  "event_type": "ASSET_REGISTERED",
+  "aggregate_type": "media_asset",
+  "aggregate_id": "travel_music-001",
+  "occurred_at": "2026-09-25T10:00:00+08:00",
+  "version": 1,
+  "payload": {
+    "content_hash": "sample-content_hash",
+    "source_kind": "sample-source_kind"
+  }
+}
